@@ -60,8 +60,43 @@
 
 #### 문자열 압축
 
+예시 )
+https://velog.io/@devjuun_s/%EB%AC%B8%EC%9E%90%EC%97%B4-%EC%95%95%EC%B6%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4python2020-Kakao-%EA%B3%B5%EC%B1%84
 
-### 3. 스택
+### 3. 스택 (LIFO)
+
+#### 재귀적 활용
+
+#### 메모이제이션 활용 (DP 핵심)  - 재귀적 구조
+
+- 한번 구해진 값에 대해서는 함수 호출없이 배열에서 값을 꺼내 계산을 진행하여 중복을 줄임.
+
+예시)
+```
+def fibo1(n):
+		global arr
+		if n >= 2 and len(arr) <= n:
+				arr.append(fibo1(n-1) + fibo1(n-2))
+		return arr[n]
+arr = [0, 1]
+```
+
+#### DP - 반복적 구조 (성능면에서 보다 효율적)
+
+예시)
+```
+def fibo2(n):
+		f = [0, 1]
+		for i in range(2, n + 1):
+				f.append(f[i-1] + f[i-2])
+		return f[n]
+```
+
+#### DFS (깊이 우선 탐색)
+
+- 백트래킹 활용(시도 횟수를 줄여주어 효율 상승)
+
++ 백트래킹 기법을 활용할 수 있는 문제 예시) 미로찾기, 체스, 부분집합, 순열 등
 
 ### 4. 큐
 
